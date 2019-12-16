@@ -9,10 +9,11 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 mongoose.connect(
-	process.env.CONNECTION_STRING, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-},
+	process.env.CONNECTION_STRING,
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	},
 	() => console.log("connected successfully")
 );
 
