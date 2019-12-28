@@ -18,6 +18,7 @@ mongoose.connect(
 );
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -47,7 +48,7 @@ app.use((error, req, res, next) => {
 	res.status(error.status || 500);
 	res.json({
 		error: {
-			message: error.message
+			message: error.message,
 		}
 	});
 });
